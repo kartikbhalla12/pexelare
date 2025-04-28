@@ -1,12 +1,23 @@
+
+import Image from 'next/image';
+import logo from './logo.svg';
+
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-2xl w-full text-center space-y-12">
-        <div className="space-y-2">
-          <div className="text-3xl font-bold text-gray-900 tracking-tight">
-            PEXELARE
+        <div className="space-y-4">
+          <div className="flex justify-center">
+            <Image
+              src={logo}
+              alt="Pexelare Logo"
+              width={120}
+              height={120}
+              // className="w-48 h-48 object-contain"
+              priority
+            />
           </div>
-          <div className="text-sm text-gray-500">Design & Development</div>
+          <div className="text-sm text-gray-900">Design & Development</div>
         </div>
         
         <div className="space-y-6">
@@ -14,13 +25,13 @@ export default function Home() {
             Coming Soon
           </h1>
           <p className="text-lg md:text-xl text-gray-600 max-w-md mx-auto leading-relaxed">
-            We&apos;re crafting something extraordinary. Launching soon.
+            We&apos;re crafting something extraordinary. Our design and development agency will be launching soon.
           </p>
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
-            href="mailto:contact@pexelare.info"
+            href="mailto:info@pexelare.info"
             className="w-full sm:w-auto px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
           >
             Get in Touch
