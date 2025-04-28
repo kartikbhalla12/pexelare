@@ -20,7 +20,7 @@ export default function Home() {
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
-            href="mailto:info@pexelare.info"
+            href="mailto:contact@pexelare.info"
             className="w-full sm:w-auto px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
           >
             Get in Touch
