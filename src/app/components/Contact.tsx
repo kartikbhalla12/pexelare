@@ -30,7 +30,7 @@ export default function Contact() {
     try {
       await emailjs.send(
         'service_sac4iri',
-        'template_123456',
+        'template_vs52qzd',
         values,
         'mThJDK3QM7PiIpe0u'
       );
@@ -139,10 +139,10 @@ export default function Contact() {
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-2">Or reach us directly at:</p>
             <a 
-              href="mailto:contact@pexelare.com" 
+              href="mailto:contact@pexelare.info" 
               className="text-blue-600 hover:text-blue-800 font-medium text-lg"
             >
-              contact@pexelare.com
+              contact@pexelare.info
             </a>
           </div>
         </div>
