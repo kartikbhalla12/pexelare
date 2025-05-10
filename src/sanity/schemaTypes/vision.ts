@@ -1,8 +1,8 @@
 import { defineField, defineType } from "sanity";
 
-const heroSchema = defineType({
-  name: "hero",
-  title: "Hero Section",
+const visionSchema = defineType({
+  name: "vision",
+  title: "Vision Section",
   type: "document",
   fields: [
     defineField({
@@ -25,7 +25,7 @@ const heroSchema = defineType({
     }),
     defineField({
       name: "image",
-      title: "Hero Image",
+      title: "Section Image",
       type: "object",
       fields: [
         {
@@ -49,20 +49,42 @@ const heroSchema = defineType({
           type: "text",
           validation: (Rule) => Rule.required(),
         },
-        {
-          name: "cardTitle",
-          title: "Card Title",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          name: "cardSubtitle",
-          title: "Card Subtitle",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-        },
       ],
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: "features",
+      title: "Features",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "title",
+              title: "Feature Title",
+              type: "string",
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "description",
+              title: "Feature Description",
+              type: "text",
+              validation: (Rule) => Rule.required(),
+            },
+            {
+              name: "icon",
+              title: "Feature Icon",
+              type: "image",
+              options: {
+                accept: "image/svg+xml",
+              },
+              description: "Upload an SVG icon for the feature",
+            },
+          ],
+        },
+      ],
+      validation: (Rule) => Rule.required().min(2).max(2),
     }),
     defineField({
       name: "ctaPrimary",
@@ -116,31 +138,6 @@ const heroSchema = defineType({
         },
       ],
     }),
-    defineField({
-      name: "trustedCompanies",
-      title: "Trusted Companies Section",
-      type: "object",
-      fields: [
-        {
-          name: "title",
-          title: "Section Title",
-          type: "string",
-        },
-        {
-          name: "description",
-          title: "Section Description",
-          type: "text",
-        },
-        {
-          name: "companies",
-          title: "Company Logos",
-          type: "array",
-          of: [{ type: "image" }],
-          validation: (Rule) => Rule.max(3).min(3),
-          description: "Upload exactly 3 company logos",
-        },
-      ],
-    }),
   ],
   preview: {
     select: {
@@ -150,4 +147,4 @@ const heroSchema = defineType({
   },
 });
 
-export default heroSchema;
+export default visionSchema;

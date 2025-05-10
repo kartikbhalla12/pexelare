@@ -35,7 +35,6 @@ interface Hero {
 
 
 export default function Hero({ data }: { data: Hero }) {
-  console.log(data);
   return (
     <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
