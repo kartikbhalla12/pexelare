@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import logo from '../logo-short.png';
+
 
 export default function LinkedIn() {
   return (
@@ -22,7 +22,7 @@ export default function LinkedIn() {
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 overflow-hidden">
                   <Image
-                    src={logo}
+                    src={'/logo-short.png'}
                     alt="Pexelare"
                     width={48}
                     height={48}
@@ -71,7 +71,7 @@ export default function LinkedIn() {
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12  overflow-hidden">
                   <Image
-                    src={logo}
+                    src={'/logo-short.png'}
                     alt="Pexelare"
                     width={48}
                     height={48}

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '../logo-white-short.png';
+
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src={logo}
+                src={'/logo-white-short.png'}
                 alt="Pexelare Logo"
                 width={40}
                 height={40}

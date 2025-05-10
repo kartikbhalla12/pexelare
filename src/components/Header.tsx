@@ -1,12 +1,11 @@
 import Image from 'next/image';
-import logo from '../logo.svg';
 
 export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <Image src={logo} alt="Pexelare Logo" width={100} height={40} />
+          <Image src={'/logo.svg'} alt="Pexelare Logo" width={100} height={40} />
         </div>
         <nav className="hidden md:flex gap-8">
           <a href="#vision" className="text-gray-600 hover:text-gray-900 transition-colors">Vision</a>
