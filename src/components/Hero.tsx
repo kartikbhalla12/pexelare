@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import { urlForImage } from '@/lib/sanity';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import Image from "next/image";
+import { urlForImage } from "@/lib/sanity";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 interface CTAButton {
   text: string;
@@ -32,26 +32,23 @@ interface Hero {
   trustedCompanies?: TrustedCompanies;
 }
 
-
-
 export default function Hero({ data }: { data: Hero }) {
   return (
     <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
               {data.title}
               <span className="text-blue-600"> {data.titleHighlight}</span>
             </h1>
-            
-            
+
             {/* </div> */}
-            
+
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
               {data.subtitle}
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               {data.ctaPrimary && (
                 <a
@@ -65,7 +62,6 @@ export default function Hero({ data }: { data: Hero }) {
                       width={20}
                       height={20}
                       className="w-5 h-5"
-                      
                     />
                   )}
                   {data.ctaPrimary.text}
@@ -78,14 +74,13 @@ export default function Hero({ data }: { data: Hero }) {
                   rel="noopener noreferrer"
                   className="w-full sm:w-auto px-8 py-4 bg-[#0A66C2] text-white rounded-lg hover:bg-[#004182] transition-colors font-medium flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
                 >
-                   {data.ctaSecondary.icon && (
+                  {data.ctaSecondary.icon && (
                     <Image
                       src={urlForImage(data.ctaSecondary.icon).url()}
                       alt="Button icon"
                       width={20}
                       height={20}
                       className="w-5 h-5"
-                      
                     />
                   )}
                   {data.ctaSecondary.text}
@@ -96,7 +91,10 @@ export default function Hero({ data }: { data: Hero }) {
             <div className="flex items-center gap-8 pt-8">
               <div className="flex -space-x-4">
                 {data.trustedCompanies?.companies?.map((client, index) => (
-                  <div key={index} className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white overflow-hidden">
+                  <div
+                    key={index}
+                    className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white overflow-hidden"
+                  >
                     <Image
                       src={urlForImage(client).url()}
                       alt={`Client ${index + 1}`}
@@ -129,20 +127,36 @@ export default function Hero({ data }: { data: Hero }) {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl font-semibold text-white">{data.image.title}</h3>
+                  <h3 className="text-xl font-semibold text-white">
+                    {data.image.title}
+                  </h3>
                   <p className="text-sm text-white/80">{data.image.subtitle}</p>
                 </div>
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    <svg
+                      className="w-6 h-6 text-gray-900"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">{data.image.cardTitle}</h4>
-                    <p className="text-sm text-gray-600">{data.image.cardSubtitle}</p>
+                    <h4 className="font-semibold text-gray-900">
+                      {data.image.cardTitle}
+                    </h4>
+                    <p className="text-sm text-gray-600">
+                      {data.image.cardSubtitle}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -152,4 +166,4 @@ export default function Hero({ data }: { data: Hero }) {
       </div>
     </section>
   );
-} 
+}

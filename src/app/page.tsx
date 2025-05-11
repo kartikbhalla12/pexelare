@@ -12,34 +12,50 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 import { client } from "@/lib/sanity";
-import { heroQuery, visionQuery, linkedinQuery, testimonialsQuery, servicesQuery } from "@/lib/queries";
+import {
+  heroQuery,
+  visionQuery,
+  linkedinQuery,
+  testimonialsQuery,
+  servicesQuery,
+  projectsQuery,
+  projectListQuery,
+} from "@/lib/queries";
+import Projects from "@/components/Projects";
 
 export default async function Home() {
-  const [heroData, visionData, linkedinData, testimonialsData, servicesData] = await Promise.all([
+  const [
+    heroData,
+    visionData,
+    linkedinData,
+    testimonialsData,
+    servicesData,
+    projectsData,
+    projectListData,
+  ] = await Promise.all([
     client.fetch(heroQuery),
     client.fetch(visionQuery),
     client.fetch(linkedinQuery),
     client.fetch(testimonialsQuery),
     client.fetch(servicesQuery),
+    client.fetch(projectsQuery),
+    client.fetch(projectListQuery),
   ]);
-
-  console.log(testimonialsData);
+  console.log(projectListData);
 
   return (
     <main>
       <Header />
       <Hero data={heroData} />
       <Vision data={visionData} />
+      <Services data={servicesData} />
+      <Projects data={projectsData} projectListData={projectListData} />
       <LinkedIn data={linkedinData} />
       <Testimonials data={testimonialsData} />
-      <Services data={servicesData} />
       <Contact />
       <Footer />
 
-      <Script
-        src="https://static.elfsight.com/platform/platform.js"
-        async
-      />
+      <Script src="https://static.elfsight.com/platform/platform.js" async />
     </main>
   );
 }

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@portabletext/react": "^3.2.1",
     "@sanity/client": "^7.0.0",
     "@sanity/icons": "^3.7.0",
     "@sanity/image-url": "1",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@portabletext/types": "^2.0.13",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

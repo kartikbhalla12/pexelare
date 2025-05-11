@@ -1,14 +1,15 @@
 import { defineField, defineType } from "sanity";
 
-const testimonialSchema = defineType({
-  name: "testimonial",
-  title: "Testimonial Section",
+export default defineType({
+  name: "projects",
+  title: "Projects Section",
   type: "document",
   fields: [
     defineField({
       name: "title",
       title: "Title",
       type: "string",
+      description: "The main title for the services section",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -21,29 +22,9 @@ const testimonialSchema = defineType({
       name: "subtitle",
       title: "Subtitle",
       type: "text",
+      description: "The subtitle/description text below the main title",
       validation: (Rule) => Rule.required(),
     }),
-
-    defineField({
-      name: "testimonials",
-      title: "Testimonials",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            { name: "name", title: "Name", type: "string" },
-            { name: "designation", title: "Designation", type: "string" },
-            { name: "company", title: "Company", type: "string" },
-            { name: "image", title: "Image", type: "image" },
-            { name: "testimonial", title: "Testimonial", type: "text" },
-            { name: "rating", title: "Rating", type: "number" },
-          ],
-        },
-      ],
-      validation: (Rule) => Rule.required().min(1).max(3),
-    }),
-
     defineField({
       name: "ctaButton",
       title: "CTA Button",
@@ -76,10 +57,6 @@ const testimonialSchema = defineType({
   preview: {
     select: {
       title: "title",
-      subtitle: "subtitle",
-      media: "image",
     },
   },
 });
-
-export default testimonialSchema;

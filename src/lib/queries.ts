@@ -63,7 +63,6 @@ export const linkedinQuery = `*[_type == "linkedin"][0] {
   }
 }`;
 
-
 export const testimonialsQuery = `*[_type == "testimonial"][0] {
   title,
   titleHighlight,
@@ -97,4 +96,32 @@ export const servicesQuery = `*[_type == "services"][0] {
     link,
     icon
   }
+}`;
+
+export const projectsQuery = `*[_type == "projects"][0] {
+  title,
+  titleHighlight,
+  subtitle,
+  ctaButton {
+    text,
+    link,
+    icon
+  }
+}`;
+
+export const projectListQuery = `*[_type == "project"] {
+  title,
+  slug,
+  image,
+  techStack,
+  shortDescription
+}`;
+
+export const projectQuery = `*[_type == "project" && slug.current == $slug][0] {
+  title,
+  slug,
+  image,
+  techStack,
+  shortDescription,
+  longDescription
 }`;

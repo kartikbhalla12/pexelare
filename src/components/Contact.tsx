@@ -1,9 +1,9 @@
-'use client';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-import emailjs from '@emailjs/browser';
-import { toast, Toaster } from 'react-hot-toast';
-import { FormikHelpers } from 'formik';
+"use client";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import emailjs from "@emailjs/browser";
+import { toast, Toaster } from "react-hot-toast";
+import { FormikHelpers } from "formik";
 
 interface FormValues extends Record<string, string> {
   user_name: string;
@@ -13,35 +13,38 @@ interface FormValues extends Record<string, string> {
 
 const validationSchema = Yup.object().shape({
   user_name: Yup.string()
-    .required('Name is required')
-    .min(2, 'Name must be at least 2 characters'),
+    .required("Name is required")
+    .min(2, "Name must be at least 2 characters"),
   user_email: Yup.string()
-    .email('Invalid email address')
-    .required('Email is required'),
+    .email("Invalid email address")
+    .required("Email is required"),
   message: Yup.string()
-    .required('Message is required')
-    .min(10, 'Message must be at least 10 characters'),
+    .required("Message is required")
+    .min(10, "Message must be at least 10 characters"),
 });
 
 export default function Contact() {
-  const handleSubmit = async (values: FormValues, { resetForm }: FormikHelpers<FormValues>) => {
-    const loadingToast = toast.loading('Sending message...');
-    
+  const handleSubmit = async (
+    values: FormValues,
+    { resetForm }: FormikHelpers<FormValues>
+  ) => {
+    const loadingToast = toast.loading("Sending message...");
+
     try {
       await emailjs.send(
-        'service_sac4iri',
-        'template_vs52qzd',
+        "service_sac4iri",
+        "template_vs52qzd",
         values,
-        'mThJDK3QM7PiIpe0u'
+        "mThJDK3QM7PiIpe0u"
       );
-      
+
       toast.dismiss(loadingToast);
-      toast.success('Message sent successfully! We will get back to you soon.');
+      toast.success("Message sent successfully! We will get back to you soon.");
       resetForm();
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error("Error sending email:", error);
       toast.dismiss(loadingToast);
-      toast.error('Failed to send message. Please try again later.');
+      toast.error("Failed to send message. Please try again later.");
     }
   };
 
@@ -54,16 +57,17 @@ export default function Contact() {
             <span className="text-blue-600"> Touch</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Have a project in mind? Let&apos;s discuss how we can help bring your ideas to life.
+            Have a project in mind? Let&apos;s discuss how we can help bring
+            your ideas to life.
           </p>
         </div>
 
         <div className="max-w-2xl mx-auto">
           <Formik
             initialValues={{
-              user_name: '',
-              user_email: '',
-              message: '',
+              user_name: "",
+              user_email: "",
+              message: "",
             }}
             validationSchema={validationSchema}
             onSubmit={handleSubmit}
@@ -71,7 +75,10 @@ export default function Contact() {
             {({ isSubmitting }) => (
               <Form className="space-y-6">
                 <div>
-                  <label htmlFor="user_name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="user_name"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Name
                   </label>
                   <Field
@@ -89,7 +96,10 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="user_email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="user_email"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Email
                   </label>
                   <Field
@@ -107,7 +117,10 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-1"
+                  >
                     Message
                   </label>
                   <Field
@@ -130,16 +143,16 @@ export default function Contact() {
                   disabled={isSubmitting}
                   className="w-full px-6 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </Form>
             )}
           </Formik>
-          
+
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-2">Or reach us directly at:</p>
-            <a 
-              href="mailto:contact@pexelare.info" 
+            <a
+              href="mailto:contact@pexelare.info"
               className="text-blue-600 hover:text-blue-800 font-medium text-lg"
             >
               contact@pexelare.info
@@ -150,4 +163,4 @@ export default function Contact() {
       <Toaster position="top-right" />
     </section>
   );
-} 
+}
