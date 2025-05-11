@@ -1,3 +1,7 @@
+export const revalidate = 60;
+
+import Script from "next/script";
+
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Vision from "@/components/Vision";
@@ -9,7 +13,6 @@ import Footer from "@/components/Footer";
 
 import { client } from "@/lib/sanity";
 import { heroQuery, visionQuery, linkedinQuery } from "@/lib/queries";
-import Script from "next/script";
 
 export default async function Home() {
   const [heroData, visionData, linkedinData] = await Promise.all([
