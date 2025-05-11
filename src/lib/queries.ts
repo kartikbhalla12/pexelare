@@ -82,3 +82,19 @@ export const testimonialsQuery = `*[_type == "testimonial"][0] {
     icon
   }
 }`;
+
+export const servicesQuery = `*[_type == "services"][0] {
+  title,
+  titleHighlight,
+  subtitle,
+  serviceItems[] {
+    title,
+    description,
+    icon
+  },
+  ctaButton {
+    text,
+    link,
+    icon
+  }
+}`;

@@ -11,7 +11,7 @@ export default function Header() {
           <a href="#vision" className="text-gray-600 hover:text-gray-900 transition-colors">Vision</a>
           <a href="#linkedin" className="text-gray-600 hover:text-gray-900 transition-colors">LinkedIn</a>
           <a href="#testimonials" className="text-gray-600 hover:text-gray-900 transition-colors">Testimonials</a>
-          <a href="#products" className="text-gray-600 hover:text-gray-900 transition-colors">Products</a>
+          <a href="#services" className="text-gray-600 hover:text-gray-900 transition-colors">Services</a>
         </nav>
         <a
           href="#contact"
