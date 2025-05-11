@@ -23,13 +23,13 @@ export default function LinkedIn({ data }: { data: LinkedInData }) {
     const removeLink = setTimeout(() => {
       const link = document.querySelector('a[href*="elfsight"]');
       link?.remove();
-    }, 500);
+    }, 1000);
 
     return () => clearTimeout(removeLink);
   }, []);
 
   return (
-    <section className="py-20 px-6 bg-gray-50">
+    <section className="py-20 px-6 bg-gray-50" id="linkedin">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">
@@ -44,7 +44,7 @@ export default function LinkedIn({ data }: { data: LinkedInData }) {
         <div
           className="elfsight-app-dcb62072-98c2-476d-acd8-ba01b5ea5965"
           data-elfsight-app-lazy
-        ></div>
+        />
 
         <div className="text-center mt-16">
           <a

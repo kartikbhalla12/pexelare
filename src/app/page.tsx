@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 
 import { client } from "@/lib/sanity";
 import { heroQuery, visionQuery, linkedinQuery } from "@/lib/queries";
+import Script from "next/script";
 
 export default async function Home() {
   const [heroData, visionData, linkedinData] = await Promise.all([
@@ -27,6 +28,11 @@ export default async function Home() {
       <Products />
       <Contact />
       <Footer />
+
+      <Script
+        src="https://static.elfsight.com/platform/platform.js"
+        async
+      />
     </main>
   );
 }

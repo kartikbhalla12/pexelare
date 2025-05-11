@@ -36,7 +36,7 @@ export default function Vision({ data }: { data: Vision }) {
   const [feat1, feat2] = data.features;
 
   return (
-    <section className="py-20 px-6 bg-white">
+    <section className="py-20 px-6 bg-white" id="vision">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative">
