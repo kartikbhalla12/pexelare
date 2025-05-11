@@ -1,5 +1,6 @@
-import { urlForImage } from "@/lib/sanity";
 import Image from "next/image";
+
+import { urlForImage } from "@/lib/sanity";
 
 interface Services {
   title: string;

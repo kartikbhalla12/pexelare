@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { urlForImage } from "@/lib/sanity";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
+import { urlForImage } from "@/lib/sanity";
 
 interface CtaButton {
   text: string;

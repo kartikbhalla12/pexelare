@@ -1,9 +1,15 @@
-import { client } from "@/sanity/lib/client";
-import { projectQuery } from "@/lib/queries";
+export const revalidate = 60;
+
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import { PortableTextBlock } from "@portabletext/types";
+
+import { client } from "@/sanity/lib/client";
+
+import { projectQuery } from "@/lib/queries";
 import { urlForImage } from "@/lib/sanity";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -75,13 +81,11 @@ const components: PortableTextComponents = {
 export default async function ProjectPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const project = await getProject(params.slug);
+  const project = await getProject((await params).slug);
 
-  if (!project) {
-    return <div>Project not found</div>;
-  }
+  if (!project) notFound();
 
   return (
     <>

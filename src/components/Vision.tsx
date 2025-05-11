@@ -1,5 +1,6 @@
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import Image from "next/image";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
 import { urlForImage } from "@/lib/sanity";
 
 interface CTAButton {

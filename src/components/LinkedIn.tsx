@@ -1,9 +1,10 @@
 "use client";
 
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import { urlForImage } from "@/lib/sanity";
 import { useEffect } from "react";
 import Image from "next/image";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+
+import { urlForImage } from "@/lib/sanity";
 
 interface CTAButton {
   text: string;
