@@ -60,6 +60,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "/logo-icon.png",
+  },
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
