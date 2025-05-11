@@ -12,14 +12,17 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 import { client } from "@/lib/sanity";
-import { heroQuery, visionQuery, linkedinQuery } from "@/lib/queries";
+import { heroQuery, visionQuery, linkedinQuery, testimonialsQuery } from "@/lib/queries";
 
 export default async function Home() {
-  const [heroData, visionData, linkedinData] = await Promise.all([
+  const [heroData, visionData, linkedinData, testimonialsData] = await Promise.all([
     client.fetch(heroQuery),
     client.fetch(visionQuery),
     client.fetch(linkedinQuery),
+    client.fetch(testimonialsQuery),
   ]);
+
+  console.log(testimonialsData);
 
   return (
     <main>
@@ -27,7 +30,7 @@ export default async function Home() {
       <Hero data={heroData} />
       <Vision data={visionData} />
       <LinkedIn data={linkedinData} />
-      <Testimonials />
+      <Testimonials data={testimonialsData} />
       <Products />
       <Contact />
       <Footer />

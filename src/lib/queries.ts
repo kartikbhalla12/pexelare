@@ -62,3 +62,23 @@ export const linkedinQuery = `*[_type == "linkedin"][0] {
     icon
   }
 }`;
+
+
+export const testimonialsQuery = `*[_type == "testimonial"][0] {
+  title,
+  titleHighlight,
+  subtitle,
+  testimonials[] {
+    name,
+    designation,
+    company,
+    image,
+    testimonial,
+    rating
+  },
+  ctaButton {
+    text,
+    link,
+    icon
+  }
+}`;

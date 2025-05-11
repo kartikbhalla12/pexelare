@@ -37,7 +37,7 @@ const linkedinSchema = defineType({
         {
           name: "link",
           title: "Button Link",
-          type: "url",
+          type: "string",
           validation: (Rule) => Rule.required(),
         },
         {
