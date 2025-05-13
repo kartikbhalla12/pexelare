@@ -1,16 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <Image
-            src={"/logo.svg"}
-            alt="Pexelare Logo"
-            width={100}
-            height={40}
-          />
+        <div className="flex items-center gap-2 cursor-pointer">
+          <Link href="/">
+            <Image
+              src={"/logo.svg"}
+              alt="Pexelare Logo"
+              width={100}
+              height={40}
+            />
+          </Link>
         </div>
         <nav className="hidden md:flex gap-8">
           <a

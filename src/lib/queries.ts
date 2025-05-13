@@ -114,7 +114,8 @@ export const projectListQuery = `*[_type == "project"] {
   slug,
   image,
   techStack,
-  shortDescription
+  shortDescription,
+  projectLink
 }`;
 
 export const projectQuery = `*[_type == "project" && slug.current == $slug][0] {
@@ -122,6 +123,6 @@ export const projectQuery = `*[_type == "project" && slug.current == $slug][0] {
   slug,
   image,
   techStack,
-  shortDescription,
-  longDescription
+  longDescription,
+  projectLink,
 }`;

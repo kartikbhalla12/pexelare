@@ -22,7 +22,12 @@ export default defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
-
+    defineField({
+      name: "projectLink",
+      title: "Project Link",
+      type: "url",
+      description: "Link to the live project or repository",
+    }),
     defineField({
       name: "image",
       title: "Project Image",
@@ -92,6 +97,50 @@ export default defineType({
         {
           type: "image",
           options: { hotspot: true },
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative Text",
+              description: "Important for SEO and accessibility",
+            },
+            {
+              name: "caption",
+              type: "string",
+              title: "Caption",
+              description: "Optional caption for the image",
+            },
+          ],
+        },
+        {
+          type: "code",
+          title: "Code Block",
+          options: {
+            language: "javascript",
+            languageAlternatives: [
+              { title: "JavaScript", value: "javascript" },
+              { title: "TypeScript", value: "typescript" },
+              { title: "HTML", value: "html" },
+              { title: "CSS", value: "css" },
+              { title: "JSON", value: "json" },
+              { title: "Python", value: "python" },
+              { title: "Java", value: "java" },
+              { title: "C#", value: "csharp" },
+              { title: "PHP", value: "php" },
+              { title: "Ruby", value: "ruby" },
+              { title: "Go", value: "go" },
+              { title: "Rust", value: "rust" },
+              { title: "Shell", value: "shell" },
+              { title: "SQL", value: "sql" },
+            ],
+          },
+        },
+        {
+          type: "table",
+          title: "Table",
+          options: {
+            layout: "grid",
+          },
         },
       ],
       description:
