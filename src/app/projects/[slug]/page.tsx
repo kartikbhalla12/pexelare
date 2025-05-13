@@ -83,6 +83,15 @@ const components: PortableTextComponents = {
     h3: ({ children }) => (
       <h3 className="text-2xl font-bold mb-3 text-gray-900">{children}</h3>
     ),
+    h4: ({ children }) => (
+      <h4 className="text-xl font-bold mb-2 text-gray-900">{children}</h4>
+    ),
+    h5: ({ children }) => (
+      <h5 className="text-lg font-bold mb-1 text-gray-900">{children}</h5>
+    ),
+    h6: ({ children }) => (
+      <h6 className="text-base font-bold mb-0 text-gray-900">{children}</h6>
+    ),
     normal: ({ children }) => (
       <p className="mb-4 text-gray-600 leading-relaxed">{children}</p>
     ),
