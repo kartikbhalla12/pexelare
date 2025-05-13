@@ -41,7 +41,6 @@ export default async function Home() {
     client.fetch(projectsQuery),
     client.fetch(projectListQuery),
   ]);
-  console.log(projectListData);
 
   return (
     <main>

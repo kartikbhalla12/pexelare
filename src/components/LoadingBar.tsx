@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import NProgress from "nprogress";
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -13,7 +13,7 @@ NProgress.configure({
   showSpinner: false,
 });
 
-export default function LoadingBar() {
+function LoadingBarContent() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -23,4 +23,12 @@ export default function LoadingBar() {
   }, [pathname, searchParams]);
 
   return null;
+}
+
+export default function LoadingBar() {
+  return (
+    <Suspense fallback={null}>
+      <LoadingBarContent />
+    </Suspense>
+  );
 }

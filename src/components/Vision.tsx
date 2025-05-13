@@ -32,8 +32,6 @@ interface Vision {
 }
 
 export default function Vision({ data }: { data: Vision }) {
-  console.log(data);
-
   const [feat1, feat2] = data.features;
 
   return (
